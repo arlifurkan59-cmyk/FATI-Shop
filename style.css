@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 60px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 120px 20px;
+  text-align: center;
+
+  background: 
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("img/4.jfif") center / cover no-repeat;
+
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: .9;
+}
+
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 80px 60px;
+}
+
+.product {
+  text-align: center;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+}
+
+
+.product img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: #f3f3f3;
+}
+
+.product h3 {
+  margin: 16px 0 6px;
+}
+
+.product span {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.product button {
+  border: 1px solid #000;
+  background: transparent;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.product button:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+/* CONTACT */
+.contact {
+  background: #f7f7f7;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border: none;
+}
+
+h1, h2, h3, .logo {
+  font-weight: 600;
+}
+
+/* SEPET PANEL */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 360px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0,0,0,.1);
+  transition: right .4s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.cart-panel.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#cartItems {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#cartItems li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+/* ARKA KARARTMA */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+  z-index: 900;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.cart-item button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #999;
+  transition: .2s;
+}
+
+.cart-item button:hover {
+  color: #000;
+}
+
+.cart-footer {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#emptyCart {
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty button {
+  border: 1px solid #ccc;
+  background: none;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.pay-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.pay-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.shopier-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  background: linear-gradient(135deg, #000, #333);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.shopier-btn:hover {
+  opacity: .85;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-bottom: none;
+  color: #fff;
+}
+
+.header a {
+  color: #fff;
+}
+
+/* FADE & SCROLL ANIMATIONS */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO TEXT */
+.hero h1,
+.hero p {
+  animation: heroFade 1.2s ease forwards;
+}
+
+.hero p {
+  animation-delay: .3s;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.insta-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.insta-icon {
+  width: 18px;
+  height: 18px;
+  fill: #000;
+  transition: .3s;
+}
+
+.insta-link:hover .insta-icon {
+  fill: #E1306C; /* Instagram rengi */
+}
+ 
