@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FATI Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">FATI shop</div>
+  <nav>
+    <a href="#">Ürünler</a>
+    <a href="#contact">İletişim</a>
+    <a href="#" class="cart">Sepet (<span id="cartCount">0</span>)</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Özel Tasarım Sticker’lar</h1>
+  <p>Minimal • Nadir • Özel Seri</p>
+</section>
+
+<section class="products">
+  <!-- 3 ÜRÜN -->
+<div class="product" data-price="40">
+  <img src="ürün/img/1.jpg">
+  <h3>Çam Baba</h3>
+  <span>₺40</span>
+  <button>Sepete Ekle</button>
+</div>
+
+<div class="product" data-price="59">
+  <img src="ürün/img/2.jpg">
+  <h3>New Christmas</h3>
+  <span>₺59</span>
+  <button>Sepete Ekle</button>
+</div>
+
+<div class="product" data-price="90">
+  <img src="ürün/img/toplu3.jpg">
+  <h3>Gizemli sürpriz stickerler</h3>
+  <span>₺90</span>
+  <button>Sepete Ekle</button>
+</div>
+
+
+</section>
+
+<section id="contact" class="contact">
+  <h2>İletişim</h2>
+  <form>
+    <input type="text" placeholder="Ad Soyad">
+    <input type="email" placeholder="E-posta">
+    <textarea placeholder="Mesaj"></textarea>
+    <button>Gönder</button>
+  </form>
+</section>
+
+<!-- SEPET PANEL -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>Sepet</h3>
+    <button id="closeCart">✕</button>
+  </div>
+
+  <ul id="cartItems"></ul>
+
+  <p id="emptyCart" style="display:none;">Sepetiniz boş</p>
+<div class="cart-footer">
+  <strong>Toplam: <span id="totalPrice">₺0</span></strong>
+
+  <form 
+    action="https://www.shopier.com/ShowProductNew/storefront.php" 
+    method="post" 
+    target="_blank"
+  >
+    <input type="hidden" name="API_key" value="BURAYA_API_KEY">
+    <input type="hidden" name="website_index" value="1">
+    <input type="hidden" name="product_name" id="shopierProduct">
+    <input type="hidden" name="product_price" id="shopierPrice">
+    <input type="hidden" name="currency" value="TRY">
+
+    <button type="submit" class="shopier-btn">
+      Shopier ile Öde
+    </button>
+  </form>
+</div>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+<footer class="site-footer">
+  <p>
+    © 2026 FATI Shop • Site Tasarımı:
+    <a href="https://instagram.com/furkanarli03" target="_blank" class="insta-link">
+      <svg viewBox="0 0 24 24" class="insta-icon" aria-hidden="true">
+        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+      </svg>
+    </a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
